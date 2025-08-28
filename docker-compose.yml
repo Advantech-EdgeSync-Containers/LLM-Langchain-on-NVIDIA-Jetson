@@ -1,9 +1,44 @@
-version: '2.4'
-# Advantech Jetson™ LLM Langchain Docker Compose file 
-# Created and maintained by Samir Singh <samir.singh@advantech.com>
-# This Docker Compose file configures the Advantech Jetson™ LLM Langchain Edge AI Development Container
-# with all necessary hardware acceleration settings.
+# ==========================================================================
+# LLM-Langchain-on-NVIDIA-Jetson Docker Compose File
+# ==========================================================================
+# Version:      1.5.0-Ubuntu20.04-ARM
+# Author:       Samir Singh <samir.singh@advantech.com>
+# Created:      March 25, 2025
+# Last Updated: August 28, 2025
+#
+# Description:
+#   This Docker Compose file deploys the Advantech Jetson™ LLM-LangChain
+#   Edge AI development environment with full NVIDIA GPU acceleration
+#   enabled for Jetson platforms.
+#
+#   The stack includes:
+#     - LangChain Service: Runs the Advantech Jetson™ LLM-LangChain container
+#       with CUDA, Tensor, and NVIDIA Jetson multimedia API integration for
+#       optimized large language model workloads at the edge.
+#     - OpenWebUI Service: Provides a browser-based user interface for prompt
+#       management, visualization, and RAG pipeline testing with seamless
+#       integration to the LangChain backend.
+#
+#   The configuration ensures direct hardware access to NVIDIA GPU, CUDA,
+#   Tensor cores, and multimedia accelerators on Jetson devices, while also
+#   integrating Advantech benchmarking tools (`wise-bench.sh`) for performance
+#   profiling.
+#
+# Terms and Conditions:
+#   1. This software is provided by Advantech Corporation "as is" and any
+#      express or implied warranties, including, but not limited to, the implied
+#      warranties of merchantability and fitness for a particular purpose are
+#      disclaimed.
+#   2. In no event shall Advantech Corporation be liable for any direct, indirect,
+#      incidental, special, exemplary, or consequential damages arising in any way
+#      out of the use of this software.
+#   3. Redistribution and use in source and binary forms, with or without
+#      modification, are permitted provided that the above copyright notice and
+#      this permission notice appear in all copies.
+#
 # Copyright (c) 2025 Advantech Corporation. All rights reserved.
+# ==========================================================================
+
 services:
   langchain-service:
     image: edgesync.azurecr.io/advantech/jetson-llm-langchain:1.5.0-Ubuntu20.04-ARM
