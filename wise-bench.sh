@@ -1,3 +1,44 @@
+# ==========================================================================
+# Advantech Jetson™ Hardware Acceleration Diagnostic & Benchmarking Tool
+# ==========================================================================
+# Version:      1.5.0-Ubuntu20.04-ARM
+# Author:       Samir Singh <samir.singh@advantech.com>
+# Created:      March 25, 2025
+# Last Updated: August 27, 2025
+#
+# Description:
+#
+#   This script provides an automated diagnostic and benchmarking utility for
+#   NVIDIA Jetson platforms and Advantech Edge AI devices. It validates GPU
+#   acceleration, CUDA setup, and performance across common AI frameworks and
+#   toolchains.
+#
+#   Key Features:
+#     - Detects and configures NVIDIA device nodes and multimedia APIs
+#     - Logs detailed system, CUDA, and GPU information
+#     - Validates CUDA-enabled support in OpenCV, PyTorch, TensorFlow, ONNX
+#     - Runs TensorRT FP16 tests with synthetic models
+#     - Benchmarks NVIDIA GStreamer plugins, FFmpeg encoders/decoders
+#     - Outputs structured logs to /workspace/wise-bench.log
+#
+#   The script is intended as a pre-flight validation step before deploying
+#   LangChain or RAG-based inference workloads, ensuring that hardware
+#   acceleration is correctly configured and available.
+#
+# Terms and Conditions:
+#   1. This software is provided by Advantech Corporation "as is" and any
+#      express or implied warranties, including, but not limited to, the implied
+#      warranties of merchantability and fitness for a particular purpose are
+#      disclaimed.
+#   2. In no event shall Advantech Corporation be liable for any direct, indirect,
+#      incidental, special, exemplary, or consequential damages arising in any way
+#      out of the use of this software.
+#   3. Redistribution and use in source and binary forms, with or without
+#      modification, are permitted provided that the above copyright notice and
+#      this permission notice appear in all copies.
+#
+# Copyright (c) 2025 Advantech Corporation. All rights reserved.
+# ==========================================================================
 #!/bin/bash
 clear
 LOG_FILE="/workspace/wise-bench.log"
