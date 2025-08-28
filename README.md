@@ -1,7 +1,7 @@
 # LLM Langchain on NVIDIA Jetson™
 
-**Version:** 1.0
-**Release Date:** May 2025
+**Version:** 2.0
+**Release Date:** August 2025
 **Copyright:** © 2025 Advantech Corporation. All rights reserved.
 
 ## Overview
@@ -23,7 +23,7 @@ LLM Langchain on NVIDIA Jetson™ Image delivers a modular, high-performance AI 
 | Offline Capability          | Fully offline after container image setup; no internet required      |
 
 ## Architecture
-![langchain-llama.png](..%2Fdata%2Farchitectures%2Flangchain-llama.png)
+![langchain-llama.png](data%2Farchitectures%2Flangchain-llama.png)
 
 ## Repository Structure
 ```
@@ -39,6 +39,7 @@ LLM-Langchain-on-NVIDIA-Jetson/
 ├── efficient-prompting-for-compact-models.md # Craft better prompts for small and quantized language models
 ├── customization-readme.md                   # Customization, optimization & configuration guide
 ├── .gitignore                                # Git ignore specific files
+├── data                                      # Contains subfolders for assets like images, gifs etc.
 └── langchain-service/                        # Core LangChain API service
     ├── app.py                                # Main LangChain-FastAPI app
     ├── llm_loader.py                         # LLM loader (Ollama, Meta Llama, etc.)
@@ -186,7 +187,7 @@ Allow some time for the OpenWebUI and Jetson™ LLM Langchain container to settl
 /workspace/wise-bench.sh
 ```
 
-![langchain-wise-bench.png](..%2Fdata%2Fimages%2Flangchain-wise-bench.png)
+![langchain-wise-bench.png](data%2Fimages%2Flangchain-wise-bench.png)
 
 Wise-bench logs are saved in `wise-bench.log` file under `/workspace`
 
@@ -205,11 +206,11 @@ http://localhost_or_Jetson_IP:3000
 ### Select Model
 In case Ollama has multiple models available, choose from the list of models on the top-left of OpenWebUI after signing up/logging in successfully. As shown below. Select Meta Llama 3.2 1B:
 
-![Select Model](..%2Fdata%2Fimages%2Fselect-model.png)
+![Select Model](data%2Fimages%2Fselect-model.png)
 
 ### Quick Demonstration:
 
-![Demo](..%2Fdata%2Fgifs%2Flangchain-llama.gif)
+![Demo](data%2Fgifs%2Flangchain-llama.gif)
 
 ## Prompt Guidelines
 
@@ -320,7 +321,7 @@ Response:
 ```
 Sample Screenshot:
 
-![ollama-curl.png](..%2Fdata%2Fimages%2Follama-curl-meta.png)
+![ollama-curl.png](data%2Fimages%2Follama-curl-meta.png)
 
 For further API details, please refer to the official documentation of Ollama as mentioned on top.
 
@@ -331,7 +332,7 @@ http://localhost_or_Jetson_IP:8000/docs
 ```
 Sample Screenshot:
 
-![fast-api.png](..%2Fdata%2Fimages%2Ffast-api.png)
+![fast-api.png](data%2Fimages%2Ffast-api.png)
 
 Inference Request:
 ```
@@ -393,7 +394,7 @@ Please note that the inference response will be in streaming mode only in the ca
 
 Sample Screenshot:
 
-![fast-api-curl.png](..%2Fdata%2Fimages%2Ffast-api-curl.png)
+![fast-api-curl.png](data%2Fimages%2Ffast-api-curl.png)
 
 The same requests can also be made from Fast-API swagger docs.
 
