@@ -157,7 +157,7 @@ The following software components/packages are provided further inside the conta
 ### Installation
 ```
 # Clone the repository
-git clone https://github.com/Advantech-EdgeSync-Containers/Nagarro-Container-Project.git
+git clone https://github.com/Advantech-EdgeSync-Containers/LLM-Langchain-on-NVIDIA-Jetson.git
 cd LLM-Langchain-on-NVIDIA-Jetson
 
 # Make the build script executable
