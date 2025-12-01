@@ -7,6 +7,15 @@
 
 ## Overview
 LLM Langchain on NVIDIA Jetson™ Image delivers a modular, high-performance AI chat solution tailored for Jetson™ edge devices. It combines Ollama with the Meta Llama 3.2 1B model for LLM inference, a FastAPI-based Langchain middleware for orchestration and tool integration, and OpenWebUI for an intuitive user interface. The container supports Retrieval-Augmented Generation (RAG), tool-augmented reasoning, conversational memory, and custom LLM workflows, making it ideal for building intelligent, context-aware agents. It is fully optimized for hardware acceleration on Jetson™ platforms & provides a development environment to build RAGs and AI agent use cases.
+## Host System Requirements
+
+| Component | Version/Requirement |
+|-----------|---------|
+| **JetPack** | 5.x |
+| **CUDA** | 11.4.315 |
+| **cuDNN** | 8.6.0.166 |
+| **TensorRT** | 8.5.2.2 |
+| **OpenCV** | 4.5.4 |
 
 ## Key Features
 
@@ -152,6 +161,13 @@ The following software components/packages are provided further inside the conta
 | OpenWebUI         | 0.6.5       | Provided via separate OpenWebUI container for UI                        |
 | Meta Llama 3.2 1B | N/A         | Pulled inside the container and persisted via docker volume             |
 | FAISS             | 1.8.0.post1 | Vector store backend for enabling RAG with efficient similarity search  |
+
+## Before you start
+- Ensure the following components are installed on your host system:
+  - **Docker** (v28.1.1 or compatible)
+  - **Docker Compose** (v2.39.1 or compatible)
+  - **NVIDIA Container Toolkit** (v1.11.0 or compatible)
+  - **NVIDIA Runtime** configured in Docker
 
 ## Quick Start
 
