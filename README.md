@@ -4,8 +4,23 @@
 **Release Date:** November 2025
 **Copyright:** © 2025 Advantech Corporation. All rights reserved.
 
+> **Troubleshooting**: For common issues and solutions, please visit our [Troubleshooting Wiki](https://github.com/yqlbu/jetson-packages-family/wiki/Troubleshooting).
+
 ## Overview
 LLM Langchain on NVIDIA Jetson™ Image delivers a modular, high-performance AI chat solution tailored for Jetson™ edge devices. It combines Ollama with the Meta Llama 3.2 1B model for LLM inference, a FastAPI-based Langchain middleware for orchestration and tool integration, and OpenWebUI for an intuitive user interface. The container supports Retrieval-Augmented Generation (RAG), tool-augmented reasoning, conversational memory, and custom LLM workflows, making it ideal for building intelligent, context-aware agents. It is fully optimized for hardware acceleration on Jetson™ platforms & provides a development environment to build RAGs and AI agent use cases.
+
+## Host System Requirements
+
+| Component | Version/Requirement |
+|-----------|---------|
+| **JetPack** | 6.x |
+| **CUDA** | 12.6.68 |
+| **cuDNN** | 9.3.0.75 |
+| **TensorRT** | 10.3.0.30 |
+| **OpenCV** | 4.8.0 |
+
+* CUDA , CuDNN , TensorRT , OpenCV versions Depends on JetPack version 6.x
+* Please refer to the [NVIDIA JetPack Documentation](https://developer.nvidia.com/embedded/jetpack) for more details on compatible versions.
 
 ## Key Features
 
@@ -129,14 +144,18 @@ This image uses Meta Llama 3.2 1B for inferencing; here are the details about th
 
 The following software components are available in the base image:
 
-| Component | Version   | Description                        |
-|-----------|-----------|------------------------------------|
-| CUDA®     | 12.6.68   | GPU computing platform             |
-| cuDNN     | 9.3.0.75  | Deep Neural Network library        |
-| TensorRT™ | 10.3.0.30 | Inference optimizer and runtime    |
-| VPI       | 3.2.4     | Vision Programming Interface       |
-| Vulkan    | 1.3.204   | Graphics and compute API           |
-| OpenCV    | 4.8.0     | Computer vision library with CUDA® |
+| Component    | Version        | Description                        |
+|--------------|----------------|------------------------------------|
+| CUDA®        | 12.6.68        | GPU computing platform             |
+| cuDNN        | 9.3.0.75       | Deep Neural Network library        |
+| TensorRT™    | 10.3.0.30      | Inference optimizer and runtime    |
+| PyTorch      | 2.0.0+nv23.02  | Deep learning framework            |
+| TensorFlow   | 2.12.0         | Machine learning framework         |
+| ONNX Runtime | 1.16.3         | Cross-platform inference engine    |
+| VPI          | 3.2.4          | Vision Programming Interface       |
+| Vulkan       | 1.3.204        | Graphics and compute API           |
+| OpenCV       | 4.8.0          | Computer vision library with CUDA® |
+| GStreamer    | 1.16.2         | Multimedia framework               |
 
 
 The following software components/packages are provided further inside the container image:
@@ -149,6 +168,20 @@ The following software components/packages are provided further inside the conta
 | OpenWebUI         | 0.6.5       | Provided via separate OpenWebUI container for UI                        |
 | Meta Llama 3.2 1B | N/A         | Pulled inside the container and persisted via docker volume             |
 | FAISS             | 1.8.0.post1 | Vector store backend for enabling RAG with efficient similarity search  |
+
+---
+
+# Before You Start
+
+Ensure the following prerequisites are met:
+
+- **Docker**: Version `28.1.1` or later
+- **Docker Compose**: Version `2.39.1` or later
+- **NVIDIA Container Toolkit**: Version `1.11.0` or later
+
+For installation instructions, refer to the [Installation Guide](https://github.com/yqlbu/jetson-packages-family/blob/main/README.md).
+
+---
 
 ## Quick Start
 
@@ -180,7 +213,7 @@ chmod +x start_services.sh
 Allow some time for the OpenWebUI and Jetson™ LLM Langchain container to settle and become healthy.
 
 ### AI Accelerator and Software Stack Verification (Optional)
-```
+```bash
 # Verify AI Accelerator and Software Stack Inside Docker Container
 chmod +x /workspace/wise-bench.sh
 ./workspace/wise-bench.sh
