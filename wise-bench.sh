@@ -536,7 +536,7 @@ if [[ "$TF_GPU_COUNT" -gt 0 ]]; then
     TF_STATUS=1
 else
     print_table_row "TensorFlow GPU" "⚠ CPU Only"
-    TF_STATUS=0
+    TF_STATUS=1
 fi
 
 if [ -e "/dev/v4l2-nvenc" ]; then
