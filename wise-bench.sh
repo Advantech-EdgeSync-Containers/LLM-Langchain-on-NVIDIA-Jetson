@@ -610,11 +610,11 @@ print_table_row "Ollama Server Status" "⚠ Not Running"
 fi
 LANGCHAIN_STATUS=$(python3 -c "
 try:
-import langchain
-print('Installed')
-except:
-print('Not Installed')
-" 2>/dev/null)
+    import langchain
+    print('Installed')
+except ImportError:
+    print('Not Installed')
+")
 if [[ "$LANGCHAIN_STATUS" == "Installed" ]]; then
 LANGCHAIN_STATUS=1
 print_table_row "LangChain" "✓ Available"
@@ -623,11 +623,11 @@ print_table_row "LangChain" "⚠ Not Available"
 fi
 FAISS_INSTALLATION_STATUS=$(python3 -c "
 try:
-import faiss
-print('Installed')
-except:
-print('Not Installed')
-" 2>/dev/null)
+    import faiss
+    print('Installed')
+except ImportError:
+    print('Not Installed')
+")
 if [[ "$FAISS_INSTALLATION_STATUS" == "Installed" ]]; then
 FAISS_STATUS=1
 print_table_row "FAISS" "✓ Available"
